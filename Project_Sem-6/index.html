@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Math Video</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&family=Poppins:wght@400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* This is important to prevent scrollbars */
+            font-family: Arial, sans-serif; /* Setting a default font */
+        }
+        
+        /* Navbar styles */
+        .navbar {
+            background-color: #1a237e; /* Dark blue background */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 24px;
+            font-family: 'Ubuntu';
+        }
+
+        /* Hamburger menu styles */
+        .hamburger-menu {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .hamburger-menu span {
+            background-color: #ffffff; /* White color for hamburger lines */
+            display: block;
+            height: 3px;
+            margin-bottom: 5px;
+            width: 25px;
+        }
+
+        /* Sample menu styles */
+        .menu {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 60px; /* Adjust according to navbar height */
+            right: 20px;
+            background-color: #1a237e; /* Dark blue background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .menu-item {
+            color: #ffffff;
+            padding: 5px 0;
+        }
+
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            opacity: 0.9;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 80px;
+            font-weight: bold;
+            color: white; /* Dark blue color */
+            font-family: 'Ubuntu';
+        }
+
+        .future{
+            text-align: center;
+            margin-top: 100px;
+            font-size: 30px;
+            color: #ffffff;
+            font-family: 'Ubuntu';
+        }
+
+        /* Search bar styles */
+        .search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .search-input {
+            width: 50%; /* Reduced the length of the search bar */
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .upload-btn {
+            background-color: #1a237e; /* Dark blue color for button background */
+            color: #ffffff; /* White color for button text */
+            border: none;
+            border-radius: 50%; /* Circular shape */
+            padding: 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            display: inline-block; /* Added to ensure it stays in line */
+            vertical-align: middle; /* Added to ensure alignment */
+        }
+
+        /* Language dropdown styles */
+        .language-dropdown {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .language-dropdown select {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        /* Generate button styles */
+        .generate-btn {
+            display: block;
+            margin: 20px auto; /* Adjusted margin */
+            padding: 10px 20px;
+            background-color: #1a237e; /* Dark blue color for button background */
+            color: #ffffff; /* White color for button text */
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Ubuntu';
+            text-decoration: none; /* Added to remove underline */
+            width: fit-content; /* Adjusted width to fit content */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <h1>AI Math Video</h1>
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="menu" id="menu">
+        <div class="menu-item">Option 1</div>
+        <div class="menu-item">Option 2</div>
+        <div class="menu-item">Option 3</div>
+    </div>
+
+    <div class="welcome-text">
+        Welcome to MathMantra !
+    </div>
+
+    <div class="future">
+        Experience the future of education with AI
+    </div>
+
+    <!-- Search bar and upload button -->
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Enter your question...">
+        <label for="file-upload" class="upload-btn">
+            <img src="img_up.png" alt="Upload Image" width="25" height="25">
+        </label>
+        <input id="file-upload" type="file" style="display: none;" accept="image/*">
+    </div>
+
+    <!-- Language dropdown -->
+    <div class="language-dropdown">
+        <select>
+            <option value="english">English</option>
+            <option value="english">Hindi</option>
+            <option value="english">Bengali</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+        </select>
+    </div>
+
+    <!-- Generate button -->
+    <a href="index2.html" class="generate-btn">Generate</a>
+
+    <video autoplay muted loop id="background-video">
+        <source src="Mantra.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

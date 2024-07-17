@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Math Video</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&family=Poppins:wght@400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* Removed overflow: hidden */
+            font-family: Arial, sans-serif; /* Setting a default font */
+            background-color: lightblue;
+        }
+        
+        /* Navbar styles */
+        .navbar {
+            background-color: #1a237e; /* Dark blue background */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 24px;
+            font-family: 'Ubuntu';
+        }
+
+        /* Hamburger menu styles */
+        .hamburger-menu {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .hamburger-menu span {
+            background-color: #ffffff; /* White color for hamburger lines */
+            display: block;
+            height: 3px;
+            margin-bottom: 5px;
+            width: 25px;
+        }
+
+        /* Sample menu styles */
+        .menu {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 60px; /* Adjust according to navbar height */
+            right: 20px;
+            background-color: #1a237e; /* Dark blue background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .menu-item {
+            color: #ffffff;
+            padding: 5px 0;
+        }
+
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: 'Ubuntu';
+            color: black; /* Dark blue color */
+        }
+
+        .future{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 25px;
+            color: black;
+            font-family: 'Ubuntu';
+        }
+
+        .genmsg{
+            text-align: center;
+            margin-top: 30px;
+            font-size: 25px;
+            color: black;
+            font-family: 'Ubuntu';
+
+        }
+
+        .video-box {
+            margin: 20px auto;
+            width: 60%; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #ffffff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+
+        .video-box video {
+            width: 100%;
+            border-radius: 10px;
+        }
+       
+        /* Transcript styles */
+        .transcript-container {
+            margin: 20px auto;
+            width: 60%; /* Adjust width as needed */
+            background-color: #ffffff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+            padding: 20px;
+        }
+
+        .transcript-heading {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a237e; /* Dark blue color */
+            margin-bottom: 10px;
+            font-family: 'Ubuntu';
+
+        }
+
+        .transcript-text {
+            font-size: 16px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <h1>AI Math Video</h1>
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="menu" id="menu">
+        <div class="menu-item">Option 1</div>
+        <div class="menu-item">Option 2</div>
+        <div class="menu-item">Option 3</div>
+    </div>
+
+    <div class="welcome-text">
+        Welcome to MathMantra !
+    </div>
+
+    <div class="future">
+        <p>        Experience the future of education with AI
+        </p>
+    </div>
+
+    <div class="genmsg">
+        <p>Video solution generated successfully ...</p>
+    </div>
+
+    <!-- Video box -->
+    <div class="video-box">
+        <video controls>
+            <source src="https://drive.google.com/file/d/1f7jFwMkc36loNFeoYfJ_kXQx2y8OnPjw/view" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Transcript box -->
+    <div class="transcript-container">
+        <div class="transcript-heading">Transcript</div>
+        <div class="transcript-text">
+            Step 1: Utilize the tangent function table or properties. <br>
+
+        We know that the tangent function has specific values for certain angles. We can use a tangent table or recall that tan(60°) = √3 and tan(30°) = 1/√3. <br> <br>
+
+        Step 2: Relate the given information to the table values. <br> 
+
+        The equation tan(A+B) = 3 suggests that A+B could be equal to 60° because tan(60°) = √3. <br>
+
+        Similarly, the equation tan(A-B) = 1/3 implies that A-B could be equal to 30° because tan(30°) = 1/√3. <br> <br>
+
+        Step 3: Solve the system of equations (A+B and A-B). <br>
+
+        We now have two possible values for A and B based on the tangent table. However, they form a system of two equations: <br>
+
+        A + B = 60° (Equation 1) <br>
+        A - B = 30° (Equation 2) <br><br>
+
+        Step 4: Add the equations to eliminate B and solve for A. <br>
+
+        Adding Equation 1 and Equation 2, we get: <br>
+
+        2A = 90° <br>
+
+        Divide both sides by 2: <br>
+
+        A = 45° <br> <br>
+
+        Step 5: Substitute A back into one of the original equations to solve for B. <br>
+
+        Knowing A is 45°, we can plug it back into either Equation 1 or Equation 2. Let's use Equation 1: <br>
+
+        45° + B = 60° <br>
+
+        Subtract 45° from both sides: <br>
+
+        B = 60° - 45° <br>
+
+        Therefore, B = 15°. <br>
+
+        Answer: <br>
+
+        A = 45° and B = 15°. <br>
+        </div>
+    </div>
+
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+

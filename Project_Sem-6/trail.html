@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Math Video</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #1a237e; /* Dark blue background */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .hamburger-menu span {
+            background-color: #ffffff; /* White color for hamburger lines */
+            display: block;
+            height: 3px;
+            margin-bottom: 5px;
+            width: 25px;
+        }
+
+        /* Page-specific styles */
+        .page {
+            display: none; /* Hide all pages by default */
+            background-color: #e1f5fe; /* Light blue background */
+            padding: 20px;
+        }
+
+        .project-name {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px; /* Shifted upwards */
+        }
+
+        .solution-info {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 10px; /* Adjust as needed */
+        }
+
+        .video-box {
+            margin: 20px auto;
+            width: 80%; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #ffffff; /* White background */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+
+        .video-box video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div>
+            <h1>AI Math Video</h1>
+        </div>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Page 1: Input page -->
+    <div id="page1" class="page" style="display: block;"> <!-- Display page 1 by default -->
+        <video autoplay muted loop id="background-video">
+            <source src="background_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="project-name">
+            <p>Welcome to MathMantra</p>
+        </div>
+
+        <div class="future">
+            <p>Experience the future of education with AI</p>
+        </div>
+
+        <!-- Search bar and upload button -->
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Enter your question...">
+            <label for="file-upload" class="upload-btn">
+                <img src="img_up.png" alt="Upload Image" width="25" height="25">
+            </label>
+            <input id="file-upload" type="file" style="display: none;" accept="image/*">
+        </div>
+
+        <!-- Language dropdown -->
+        <div class="language-dropdown">
+            <select>
+                <option value="english">English</option>
+                <option value="english">Hindi</option>
+                <option value="english">Bengali</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+            </select>
+        </div>
+
+        <!-- Generate button -->
+        <button class="generate-btn" onclick="showPage('page2')">Generate</button>
+    </div>
+
+    <!-- Page 2: Output page -->
+    <div id="page2" class="page">
+        <div class="project-name">
+            <p>Welcome to MathMantra</p>
+            <p>Here's your video solution along with the transcript:</p>
+        </div>
+
+        <!-- Video box -->
+        <div class="video-box">
+            <video controls>
+                <source src="gen_vid_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
+                page.style.display = 'none';
+            });
+
+            // Show the specified page
+            var page = document.getElementById(pageId);
+            page.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
